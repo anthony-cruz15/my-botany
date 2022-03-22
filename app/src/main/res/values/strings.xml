@@ -9,4 +9,6 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="filler_plantName">Lorem ipsum plants</string>
+    <string name="filler_plantTime">0:00 until death</string>
 </resources>
