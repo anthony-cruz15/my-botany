@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -34,8 +35,8 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_toEndOf="@id/fillerImage"
-                android:text="@string/filler_plantName"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="Plant Name" />
 
             <TextView
                 android:id="@+id/plantTime_textView"
@@ -46,8 +47,8 @@
                 android:layout_marginTop="-64dp"
                 android:layout_toEndOf="@id/fillerImage"
                 android:drawablePadding="2dp"
-                android:text="@string/filler_plantTime"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:text="Plant Time" />
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
