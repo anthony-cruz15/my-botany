@@ -10,4 +10,34 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
+    <string-array name="plant_names">
+        <item>Filler1</item>
+        <item>Filler2</item>
+        <item>Filler3</item>
+        <item>Filler4</item>
+        <item>Filler5</item>
+        <item>Filler6</item>
+        <item>Filler7</item>
+        <item>Filler8</item>
+        <item>Filler9</item>
+        <item>Filler10</item>
+    </string-array>
+
+    <string-array name="plant_info">
+        <item>Here is some Filler1 info</item>
+        <item>Here is some Filler2 info</item>
+        <item>Here is some Filler3 info</item>
+        <item>Here is some Filler4 info</item>
+        <item>Here is some Filler5 info</item>
+        <item>Here is some Filler6 info</item>
+        <item>Here is some Filler7 info</item>
+        <item>Here is some Filler8 info</item>
+        <item>Here is some Filler9 info</item>
+        <item>Here is some Filler10 info</item>
+    </string-array>
+
+    <array name="plant_images">
+        <item>@id/fillerImage</item>
+    </array>
+
 </resources>
