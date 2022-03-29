@@ -1,6 +1,7 @@
 package com.example.mybotany;
 
-import android.content.Intent;
+
+import android.content.res.TypedArray;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -15,12 +16,15 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mybotany.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,11 +33,23 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private FloatingActionButton addPlantButton;
 
+    private RecyclerView mRecyclerView;
+    private ArrayList<Plant> mPlantData;
+    private AdapterClass mAdapter;
+
     private final LinkedList<String> mPlantList = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //initialize recycler view and sets layout manager
+        mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //initializes array list
+        mPlantData = new ArrayList<>();
 
         setContentView(R.layout.activity_main);
 
@@ -53,6 +69,27 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    private void initializeData() {
+        String[] plantNameList = getResources()
+                .getStringArray(R.array.plant_names);
+        String[] plantInfo = getResources()
+                .getStringArray(R.array.plant_info);
+        TypedArray plantImageResources = getResources().obtainTypedArray(R.array.plant_images);
+
+        mPlantData.clear();
+
+        for (int i = 0; i < plantNameList.length; i++ ) {
+            mPlantData.add(new Plant(plantNameList[i], plantInfo[i], plantImageResources.getResourceId(i, 0)));
+        }
+        plantImageResources.recycle();
+        mAdapter.notifyDataSetChanged();
+    }
+
+    private void resetPlants (View view) {
+        initializeData();
     }
 
     @Override
