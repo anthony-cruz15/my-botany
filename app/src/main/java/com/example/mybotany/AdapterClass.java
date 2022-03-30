@@ -69,11 +69,6 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.Viewholder> 
             mInfoText.setText(selectedPlant.getTime());
             Glide.with(mContext).load(selectedPlant.getImageResource()).into(mPlantImage);
         }
-
-        @Override
-        public void onCLick(View view) {
-            Plant selectedPlant = mPlantData.get(getAdapterPosition());
-           // Intent detailIntent = new Intent(DetailActiv)
-        }
+        
     }
     }
