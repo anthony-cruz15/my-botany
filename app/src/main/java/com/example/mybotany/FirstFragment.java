@@ -8,13 +8,17 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mybotany.databinding.FragmentFirstBinding;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class FirstFragment extends Fragment {
 
@@ -22,6 +26,8 @@ public class FirstFragment extends Fragment {
     private RecyclerView mRecyclerView;
     private ArrayList<Plant> mPlantData;
     private AdapterClass mAdapter;
+    private FloatingActionButton addPlantButton;
+
 
     @Override
     public View onCreateView(
@@ -34,9 +40,21 @@ public class FirstFragment extends Fragment {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
 
-        //initialize recycler view and sets layout manager
+
+        //initialize recycler view and fab
         mRecyclerView = binding.plantTimerList;
+        addPlantButton = binding.addPlantButton;
+        //sets layout manager for recycler view
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
+
+        //sets on click listener for the fab
+        addPlantButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_FirstFragment_to_SecondFragment);
+
+            }
+        });
 
         return binding.getRoot();
 

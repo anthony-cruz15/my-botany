@@ -29,7 +29,6 @@ import java.util.LinkedList;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private FloatingActionButton addPlantButton;
 
     private final LinkedList<String> mPlantList = new LinkedList<>();
 
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        addPlantButton = findViewById(R.id.addPlantButton);
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
@@ -47,13 +45,7 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
-        addPlantButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-               navController.navigate(R.id.action_FirstFragment_to_SecondFragment);
 
-            }
-        });
     }
 
 
