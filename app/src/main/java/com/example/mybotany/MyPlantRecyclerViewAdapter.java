@@ -3,25 +3,24 @@ package com.example.mybotany;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.mybotany.placeholder.PlaceholderContent.PlaceholderItem;
+import com.example.mybotany.placeholder.PlaceholderContent.Plant;
 import com.example.mybotany.databinding.FragmentPlantListBinding;
 
 import java.util.List;
 
 /**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
+ * {@link RecyclerView.Adapter} that can display a {@link Plant}.
  * TODO: Replace the implementation with code for your data type.
  */
 public class MyPlantRecyclerViewAdapter extends RecyclerView.Adapter<MyPlantRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
+    private final List<Plant> mPlantButtonInfo;
 
-    public MyPlantRecyclerViewAdapter(List<PlaceholderItem> items) {
-        mValues = items;
+    public MyPlantRecyclerViewAdapter(List<Plant> items) {
+        mPlantButtonInfo = items;
     }
 
     @Override
@@ -33,20 +32,20 @@ public class MyPlantRecyclerViewAdapter extends RecyclerView.Adapter<MyPlantRecy
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mItem = mPlantButtonInfo.get(position);
+        holder.mIdView.setText(mPlantButtonInfo.get(position).id);
+        holder.mContentView.setText(mPlantButtonInfo.get(position).content);
     }
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return mPlantButtonInfo.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final TextView mIdView;
         public final TextView mContentView;
-        public PlaceholderItem mItem;
+        public Plant mItem;
 
         public ViewHolder(FragmentPlantListBinding binding) {
             super(binding.getRoot());
