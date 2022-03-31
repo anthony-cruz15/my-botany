@@ -12,29 +12,90 @@
     <string name="back_Button">back</string>
 
     <string-array name="plant_names">
-        <item>Filler1</item>
-        <item>Filler2</item>
-        <item>Filler3</item>
-        <item>Filler4</item>
-        <item>Filler5</item>
-        <item>Filler6</item>
-        <item>Filler7</item>
-        <item>Filler8</item>
-        <item>Filler9</item>
-        <item>Filler10</item>
+        <item>Giant Dioon (Dioon spinulosum)</item>
+        <item>Rose (Rosa 'Violet's Pride')</item>
+        <item>Euphorbia (Euphorbia ephedromorpha)</item>
+        <item>Dutch Hyacinth (Hyacinthus orientalis 'Splendid Cornelia')</item>
+        <item>Alpinia purpurata 'Rosea'</item>
+        <item>Tall Bearded Iris (Iris 'Argosy')</item>
+        <item>Mammillarias (Mammillaria)</item>
+        <item>Rubber Plant (Ficus elastica)</item>
+        <item>Living Stones (Lithops lesliei)</item>
     </string-array>
 
     <string-array name="plant_info">
-        <item>Here is some Filler1 info</item>
-        <item>Here is some Filler2 info</item>
-        <item>Here is some Filler3 info</item>
-        <item>Here is some Filler4 info</item>
-        <item>Here is some Filler5 info</item>
-        <item>Here is some Filler6 info</item>
-        <item>Here is some Filler7 info</item>
-        <item>Here is some Filler8 info</item>
-        <item>Here is some Filler9 info</item>
-        <item>Here is some Filler10 info</item>
+        <item>This species of Cycad has left fossils up to about 170 million years ago. It is native to
+            the limestone cliffs and rocky hillsides of the tropical rain forests of Veracruz and Oaxaca,
+            Mexico. It is one of the tallest cycads left in the world to about 36 feet high. Its huge,
+            compound, palm-like leaves have 120 to 240 leaflets armed with small marginal teeth. The
+            female plants bear huge cones to 30 inches long and weighing up to 30 pounds, and contain up
+            to about 300 seeds that are dispersed when the cones burst open. The plant can tolerate
+            temperatures down to 28 degrees Fahrenheit. The tree lives several hundred years. It is
+            easy to grow in tropical landscapes and likes full sun to part-shade and moist,
+            well-drained soils. Even though they look like palm trees, Cycads are more closely related
+            to Conifers by their cone reproductive structures.</item>
+        <item>This is the most productive and prettiest rose in most gardens.
+            It's subtly fragrant and blooms from late March until November. Grows up to 5 feet tall.</item>
+        <item>A forgotten succulent Euphorbia from Guatemala, this species is related to Euphorbia
+            guiengola. A very floriferous species, it can produce up to 500 flowers a year. Has similar
+            care to most winter dormant species of Euphorbia, although it needs more humidity and water.</item>
+        <item>The bud colors are beautifully shaded in light blue to lavender with tinges of violet.
+            They take up little space. They're well suited to growing under the canopy of deciduous
+            shrubs, in the area that's too shady and dry in summer for most plants. The hyacinth foliage
+            dies back after flowering and isn't seen again til next spring.</item>
+        <item>This herbaceous plant is native to the islands of the South Pacific. It sends up leafy
+            cane-like stems arising from rhizomes that get 3 to 15 feet high. There are dwarf cultivars
+            of this. The flowers are harvested as cut flowers in Hawaii.</item>
+        <item>The most commonly found garden iris is the bearded German Iris (I. germanica) and its
+            numerous cultivars. Tall Bearded Iris begin blooming in early May in most parts of the US,
+            and continue through mid-June, depending on weather. Tall Bearded Iris range in height from
+            28" to 48"! Modern hybrids of the Tall Bearded Iris carry wonderful combinations of color,
+            form and bloom habits. </item>
+        <item>One of the largest and most popular genre of cacti, known for flowering in profusion in
+            crowns near the top of the plant. Generally well behaved in containers, provided excellent
+            drainage, strong light, and discipline with the watering can. These are dry growing plants
+            and they do not enjoy wet feet or low light. From North America and the Caribbean, just into
+            South America. About 90% of the species are endemic to (found only in) Mexico, and a third
+            of the species are endemic to a single state in Mexico. The two main hotspots are central
+            Mexico and southern Baja California A defining feature of this genus (which is not unique
+            to it) is the presence of dimorphic areoles. The spines come out at the end of the
+            tubercles, but the flowers, bristles, wool, and branches (if present) all come from the
+            axils in between the tubercles. Another defining feature is that flowers do not appear at
+            the apex (top center) but just below it, typically in a ring below recently produced
+            tubercles. Several Mammillarias make edible fruit, though some are much better than others.
+            This genus, which recently absorbed the monotypic genus Mammilloydia, is apparently sister
+            to Cochemiea, a group of hooked-spine plants with distinctive red, zygomorphic flowers
+            attracting hummingbirds. Until recently Cochemiea was lumped with Mammillaria. However a
+            recent (2021) revision of these genera based on DNA analysis rearranged them significantly,
+            moving almost all the plants with hooked spines into the resurrected Cochemiea and leaving
+            the straight-spined plants in Mammillaria. These changes do not seem to be widely accepted
+            yet. These genera are cousins of the mostly North American Coryphantha and Escobaria, which
+            bear their flowers at the apex.</item>
+        <item>One of the most common and well-known house plants here in the northern USA. However,
+            it is native to much of southern tropical Asia where it can grow to be a big tree to 100
+            feet high with a big trunk with high buttresses. It is known as having an aggressive root
+            system as a big outdoor tree.</item>
+        <item>Flowering is usually an indication the plant is preparing for its water rest and watering should begin to be reduced.
+            A pollinated seed pod will form a capsule that looks like a pentagon flower shape and will
+            gradually dry to a brown color. It is closed when dry, but if water is placed on it, it will
+            open out to release some of the seeds. If no rain or watering is present.</item>
+    </string-array>
+
+    <string-array name="plantWaterInfo">
+        <item>Dioon edule needs 0.8 cups of water every 9 days when it doesn't get direct sunlight and
+            is potted in a 5.0" pot.</item>
+        <item>Newly planted roses – water every two or three days. Established roses – water once or
+            twice a week as needed to keep the soil moist around your roses.</item>
+        <item>Water your euphorbia every two weeks in the summer time, but triple check that the soil
+            is completely dry between each watering. When watering make sure the water is drainage
+            through its growers nursery pot.</item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
+        <item></item>
     </string-array>
 
     <array name="plant_images">
