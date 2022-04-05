@@ -21,6 +21,8 @@
         <item>Mammillarias (Mammillaria)</item>
         <item>Rubber Plant (Ficus elastica)</item>
         <item>Living Stones (Lithops lesliei)</item>
+        <item>Peperomia</item>
+        <item>Chinese Evergreen</item>
     </string-array>
 
     <string-array name="plant_info">
@@ -79,6 +81,10 @@
             A pollinated seed pod will form a capsule that looks like a pentagon flower shape and will
             gradually dry to a brown color. It is closed when dry, but if water is placed on it, it will
             open out to release some of the seeds. If no rain or watering is present.</item>
+        <item>Peperomias are a diverse group of small, easy-care houseplants with waxy and often highly
+            textured leaves. Some of our favorite varieties include ripple peperomia, watermelon peperomia,
+            baby rubber plant, and silverleaf peperomia. Its waxy, colorful foliage adds a splash of
+            color in any room without taking up a lot of space.</item>
     </string-array>
 
     <string-array name="plantWaterInfo">
@@ -89,13 +95,20 @@
         <item>Water your euphorbia every two weeks in the summer time, but triple check that the soil
             is completely dry between each watering. When watering make sure the water is drainage
             through its growers nursery pot.</item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
-        <item></item>
+        <item>Watering hyacinth about once a month with 1 inch of water when rain is lacking
+            is all that is generally necessary.</item>
+        <item>Summer 1-2 times a week. The substrate must be wet.</item>
+        <item>Water deeply once every week or two during the dry spring and summer months</item>
+        <item>You should only water about once a month, and then quite sparingly. Just give
+            the plant enough water to prevent having it shrivel up</item>
+        <item>Water every 1-2 weeks, allowing soil to dry out between waterings. Increase frequency with
+            increased light.</item>
+        <item>Water living stone plants every two to three weeks, or when the soil dries out, between May
+            and July, which is when living stones are actively growing. Soak the soil until water runs
+            out of the bottom of the pot at each watering. Don't water again until the soil is completely
+            dry.</item>
+        <item>Water every 1-2 weeks, allowing the potting soil to dry out between waterings. Expect to
+            water more often when your cactus is in brighter light and less often in lower light.</item>
     </string-array>
 
     <array name="plant_images">
