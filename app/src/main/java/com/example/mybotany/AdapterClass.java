@@ -34,12 +34,9 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.Viewholder> 
     return new Viewholder(view);
     }
 
-  //  @Override
-    //public void onBindViewHolder(@NonNull AdapterClass.ViewHolder holder, int position) {
-      //  AdapterClass model = modelClassArrayList.get(position)
-//    }
   @Override
   public void onBindViewHolder(@NonNull AdapterClass.Viewholder holder, int position) {
+
       // to set data to textview and imageview of each card layout
       Plant selectedPlant = mPlantData.get(position);
       holder.bindTo(selectedPlant);

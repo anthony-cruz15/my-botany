@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.mybotany.placeholder.PlaceholderContent.Plant;
@@ -41,10 +42,21 @@ public class MyPlantRecyclerViewAdapter extends RecyclerView.Adapter<MyPlantRecy
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
+        public final ImageView mImageView;
+
         public Plant mItem;
 
         public ViewHolder(FragmentPlantListBinding binding) {
             super(binding.getRoot());
+
+            mImageView = binding.fillerImageButton;
+        }
+
+      //  @Override
+        //public String toString() {
+           // return super.toString() + " '" + mContentView.getText() + "'";
+
         }
 
         @Override
@@ -52,4 +64,4 @@ public class MyPlantRecyclerViewAdapter extends RecyclerView.Adapter<MyPlantRecy
             return super.toString();
         }
     }
-}
+//}
