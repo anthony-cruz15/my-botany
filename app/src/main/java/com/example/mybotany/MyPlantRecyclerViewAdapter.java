@@ -42,17 +42,26 @@ public class MyPlantRecyclerViewAdapter extends RecyclerView.Adapter<MyPlantRecy
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         public final ImageView mImageView;
+
         public Plant mItem;
 
         public ViewHolder(FragmentPlantListBinding binding) {
             super(binding.getRoot());
+
             mImageView = binding.fillerImageButton;
         }
 
       //  @Override
         //public String toString() {
            // return super.toString() + " '" + mContentView.getText() + "'";
+
+        }
+
+        @Override
+        public String toString() {
+            return super.toString();
         }
     }
 //}
