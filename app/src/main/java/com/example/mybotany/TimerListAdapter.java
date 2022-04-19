@@ -1,8 +1,6 @@
 package com.example.mybotany;
 
 import android.content.Context;
-import android.content.Intent;
-import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,27 +13,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class AdapterClass extends RecyclerView.Adapter<AdapterClass.Viewholder> {
-    private ArrayList<Plant> mPlantData;
+public class TimerListAdapter extends RecyclerView.Adapter<TimerListAdapter.Viewholder> {
+    private List<Plant> mPlantData;
     private Context mContext;
 
 
-     AdapterClass(Context context, ArrayList<Plant> plantData) {
-        this.mContext = context;
+     public TimerListAdapter(List<Plant> plantData, Context context) {
         this.mPlantData = plantData;
+        this.mContext = context;
     }
-
 
     @NonNull
     @Override
-    public AdapterClass.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public TimerListAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.plant_item, parent, false);
-    return new Viewholder(view);
+        return new Viewholder(view);
     }
 
   @Override
-  public void onBindViewHolder(@NonNull AdapterClass.Viewholder holder, int position) {
+  public void onBindViewHolder(@NonNull TimerListAdapter.Viewholder holder, int position) {
 
       // to set data to textview and imageview of each card layout
       Plant selectedPlant = mPlantData.get(position);
