@@ -1,11 +1,13 @@
 package com.example.mybotany;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -45,5 +47,7 @@ public class SecondFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
 
 }

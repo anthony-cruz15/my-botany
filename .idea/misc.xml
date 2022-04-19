@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/antho.cr0783/AndroidStudioProjects/my-botany/app/src/main/res/layout/activity_main.xml" value="0.16875" />
         <entry key="..\:/Users/johna.ca8146/StudioProjects/my-botany/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/johna.ca8146/StudioProjects/my-botany/app/src/main/res/layout/content_main.xml" value="0.1" />
         <entry key="..\:/Users/johna.ca8146/StudioProjects/my-botany/app/src/main/res/layout/fragment_first.xml" value="0.2776268115942029" />
@@ -11,7 +12,6 @@
         <entry key="..\:/Users/johna.ca8146/StudioProjects/my-botany/app/src/main/res/layout/fragment_second.xml" value="0.25" />
         <entry key="..\:/Users/johna.ca8146/StudioProjects/my-botany/app/src/main/res/layout/listitem.xml" value="0.1697061803444782" />
         <entry key="..\:/Users/johna.ca8146/StudioProjects/my-botany/app/src/main/res/layout/plant_item.xml" value="0.1641337386018237" />
-        <entry key="..\:/Users/johna.ca8146/StudioProjects/my-botany/app/src/main/res/layout/plant_pic.xml" value="0.25181159420289856" />
         <entry key="..\:/Users/johna.ca8146/StudioProjects/my-botany/app/src/main/res/menu/menu_main.xml" value="0.28888888888888886" />
       </map>
     </option>

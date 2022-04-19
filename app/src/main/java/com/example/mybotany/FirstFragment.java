@@ -61,11 +61,12 @@ public class FirstFragment extends Fragment {
     }
 
     private void initializeData() {
+        //fills array with content from string files
         String[] plantNameList = getResources()
-                .getStringArray(R.array.plant_names);
+                .getStringArray(R.array.plant_names); //string list of plant names from DB
         String[] plantInfo = getResources()
-                .getStringArray(R.array.plant_info);
-        TypedArray plantImageResources = getResources().obtainTypedArray(R.array.plant_images);
+                .getStringArray(R.array.plant_info); //string list of plant info from DB
+        TypedArray plantImageResources = getResources().obtainTypedArray(R.array.plant_images); //list of plant images
 
         mPlantData.clear();
 
@@ -73,7 +74,7 @@ public class FirstFragment extends Fragment {
             mPlantData.add(new Plant(plantNameList[i], plantInfo[i], plantImageResources.getResourceId(i, 0)));
         }
         plantImageResources.recycle();
-        mAdapter.notifyDataSetChanged();
+        //mAdapter.notifyDataSetChanged();
     }
 
     private void resetPlants (View view) {
