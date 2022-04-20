@@ -176,7 +176,7 @@ public class PlantDB {
             R.drawable.giantDoon,
             R.drawable.rose,
             R.drawable.euphorbiasPlant,
-            R.drawable.dutchHyacinth,
+            R.drawable.dutchhyacinth,
             R.drawable.alpina,
             R.drawable.iris,
             R.drawable.mammillaria,
