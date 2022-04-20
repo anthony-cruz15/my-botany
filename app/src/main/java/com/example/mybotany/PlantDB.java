@@ -133,7 +133,7 @@ public class PlantDB {
 
     public static String[] plantWaterInfo ={
             "Dioon edule needs 0.8 cups of water every 9 days when it doesn't get direct sunlight and\n" +
-                    "            is potted in a 5.0\" pot.",
+                    "is potted in a 5.0\" pot.",
             "Newly planted roses – water every two or three days. Established roses – water once or\n" +
                     "            twice a week as needed to keep the soil moist around your roses.",
             "Water your euphorbia every two weeks in the summer time, but triple check that the soil\n" +
