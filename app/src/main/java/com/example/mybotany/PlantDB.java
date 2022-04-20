@@ -173,15 +173,15 @@ public class PlantDB {
                     "            often."
     };
     public static int[] plantPic ={
-            R.drawable.giantDoon,
+            R.drawable.giantdoon,
             R.drawable.rose,
-            R.drawable.euphorbiasPlant,
+            R.drawable.euphorbiasplant,
             R.drawable.dutchhyacinth,
             R.drawable.alpina,
             R.drawable.iris,
             R.drawable.mammillaria,
             R.drawable.rubber,
-            R.drawable.livingStones,
+            R.drawable.livingstones,
             R.drawable.peperomia,
             R.drawable.chineseevergreen,
             R.drawable.grapeivy,
