@@ -65,24 +65,7 @@ public class FirstFragment extends Fragment {
         return binding.getRoot();
 
     }
-
-    private void initializeData() {
-        //fills array with content from string files
-        String[] plantNameList = PlantDB.plantName; //string list of plant names from DB
-        String[] plantInfo = PlantDB.plantInfo; //string list of plant info from DB
-        int[] plantImageResources = PlantDB.plantPic; //list of plant images
-
-        mPlantData.clear();
-
-        for (int i = 0; i < plantNameList.length; i++) {
-            mPlantData.add(new Plant(plantNameList[i], plantInfo[i], plantImageResources[i]));
-        }
-        //mAdapter.notifyDataSetChanged();
-    }
-
-    private void resetPlants(View view) {
-        initializeData();
-    }
+    
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -96,6 +79,11 @@ public class FirstFragment extends Fragment {
 
     private List<Plant> getPlantsFromDB() {
         List<Plant> plants = new ArrayList<>();
+        //fills array with content from string files
+        String[] plantNameList = PlantDB.plantName; //string list of plant names from DB
+        String[] plantInfo = PlantDB.plantInfo; //string list of plant info from DB
+        int[] plantImageResources = PlantDB.plantPic; //list of plant images
+
         for (int i = 0; i < PlantDB.plantName.length; i++) {
             plants.add(new Plant(PlantDB.plantName[i], PlantDB.plantInfo[i], PlantDB.plantPic[i] ));
         }
