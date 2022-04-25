@@ -56,7 +56,6 @@ public class TimerListAdapter extends RecyclerView.Adapter<TimerListAdapter.View
             mNameText = itemView.findViewById(R.id.plantName_textView);
             mInfoText = itemView.findViewById(R.id.plantTime_textView);
 
-            itemView.setOnClickListener((View.OnClickListener) this);
         }
 
         public void bindTo(Plant selectedPlant) {
