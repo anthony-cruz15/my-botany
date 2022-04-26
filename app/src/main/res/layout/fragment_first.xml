@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="10"
-        tools:listitem="@layout/plant_item" >
+        tools:listitem="@layout/plant_timer_item" >
 
     </androidx.recyclerview.widget.RecyclerView>
 

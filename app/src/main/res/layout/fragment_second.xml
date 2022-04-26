@@ -6,12 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
 
-    <include
-        layout="@layout/fragment_plant_list"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/plantButtonList"
+        android:name="com.example.mybotany.PlantListFragment"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@+id/backButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context=".PlantListFragment"
+        tools:itemCount="5"
+        tools:listitem="@layout/plant_button_item" />
 
     <Button
         android:id="@+id/backButton"

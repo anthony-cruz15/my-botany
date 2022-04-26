@@ -1,0 +1,61 @@
+package com.example.mybotany;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+
+import java.util.List;
+
+public class ButtonListAdapter extends RecyclerView.Adapter<ButtonListAdapter.Viewholder> {
+    private List<Plant> mPlantData;
+    private Context mContext;
+
+
+    public ButtonListAdapter(List<Plant> plantData, Context context) {
+        this.mPlantData = plantData;
+        this.mContext = context;
+    }
+
+    @NonNull
+    @Override
+    public ButtonListAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.plant_button_item, parent, false);
+        return new Viewholder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ButtonListAdapter.Viewholder holder, int position) {
+        // to set data to textview and imageview of each card layout
+        Plant selectedPlant = mPlantData.get(position);
+        holder.bindTo(selectedPlant);
+    }
+
+    @Override
+    public int getItemCount() {
+        return mPlantData.size();
+    }
+
+    class Viewholder extends RecyclerView.ViewHolder {
+        private Button mPlantButton;
+
+        public Viewholder(View itemView) {
+            super(itemView);
+            mPlantButton = itemView.findViewById(R.id.plant_button);
+        }
+
+        public void bindTo(Plant selectedPlant) {
+            mPlantButton.setText(selectedPlant.getName());
+            mPlantButton.setBackgroundResource(selectedPlant.getImageResource());
+        }
+
+    }
+}

@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TimerListAdapter extends RecyclerView.Adapter<TimerListAdapter.Viewholder> {
@@ -28,12 +27,12 @@ public class TimerListAdapter extends RecyclerView.Adapter<TimerListAdapter.View
     @NonNull
     @Override
     public TimerListAdapter.Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.plant_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.plant_timer_item, parent, false);
         return new Viewholder(view);
     }
 
   @Override
-  public void onBindViewHolder(@NonNull TimerListAdapter.Viewholder holder, int position) {
+  public void onBindViewHolder(@NonNull Viewholder holder, int position) {
 
       // to set data to textview and imageview of each card layout
       Plant selectedPlant = mPlantData.get(position);
@@ -65,4 +64,4 @@ public class TimerListAdapter extends RecyclerView.Adapter<TimerListAdapter.View
         }
         
     }
-    }
+}
