@@ -25,7 +25,6 @@ public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
     private RecyclerView mRecyclerView;
     private ArrayList<Plant> mPlantData;
-    private TimerListAdapter mAdapter;
     private FloatingActionButton addPlantButton;
 
 
@@ -45,9 +44,6 @@ public class FirstFragment extends Fragment {
         RecyclerView.ItemDecoration decoration = new DividerItemDecoration(context, LinearLayout.VERTICAL);
         recyclerView.addItemDecoration(decoration);
 
-
-
-
         //initialize recycler view and fab
         mRecyclerView = binding.plantTimerList;
         addPlantButton = binding.addPlantButton;
@@ -61,9 +57,7 @@ public class FirstFragment extends Fragment {
                 Navigation.findNavController(view).navigate(R.id.action_FirstFragment_to_SecondFragment);
             }
         });
-
         return binding.getRoot();
-
     }
     
 
@@ -80,10 +74,6 @@ public class FirstFragment extends Fragment {
     private List<Plant> getPlantsFromDB() {
         List<Plant> plants = new ArrayList<>();
         //fills array with content from string files
-        String[] plantNameList = PlantDB.plantName; //string list of plant names from DB
-        String[] plantInfo = PlantDB.plantInfo; //string list of plant info from DB
-        int[] plantImageResources = PlantDB.plantPic; //list of plant images
-
         for (int i = 0; i < PlantDB.plantName.length; i++) {
             plants.add(new Plant(PlantDB.plantName[i], PlantDB.plantInfo[i], PlantDB.plantPic[i] ));
         }
