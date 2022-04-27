@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -56,6 +57,12 @@ public class ButtonListAdapter extends RecyclerView.Adapter<ButtonListAdapter.Vi
         public void bindTo(Plant selectedPlant) {
             mPlantButton.setText(selectedPlant.getName());
             mPlantButton.setBackgroundResource(selectedPlant.getImageResource());
+            mPlantButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Navigation.findNavController(view).navigate(R.id.action_SecondFragment_to_thirdFragment);
+                }
+            });
         }
 
     }
