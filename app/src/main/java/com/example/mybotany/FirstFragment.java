@@ -24,15 +24,11 @@ public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
     private RecyclerView mRecyclerView;
-    private ArrayList<Plant> mPlantData;
     private FloatingActionButton addPlantButton;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        //initializes array list
-        mPlantData = new ArrayList<>();
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         // Inflate the layout for this fragment
