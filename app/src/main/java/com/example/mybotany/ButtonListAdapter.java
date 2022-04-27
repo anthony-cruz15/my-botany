@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -47,15 +48,17 @@ public class ButtonListAdapter extends RecyclerView.Adapter<ButtonListAdapter.Vi
     }
 
     class Viewholder extends RecyclerView.ViewHolder {
-        private Button mPlantButton;
+        private ImageButton mPlantButton;
+        private TextView mPlantName;
 
         public Viewholder(View itemView) {
             super(itemView);
             mPlantButton = itemView.findViewById(R.id.plant_button);
+            mPlantName = itemView.findViewById(R.id.plantName);
         }
 
         public void bindTo(Plant selectedPlant) {
-            mPlantButton.setText(selectedPlant.getName());
+            mPlantName.setText(selectedPlant.getName());
             mPlantButton.setBackgroundResource(selectedPlant.getImageResource());
             mPlantButton.setOnClickListener(new View.OnClickListener() {
                 @Override
