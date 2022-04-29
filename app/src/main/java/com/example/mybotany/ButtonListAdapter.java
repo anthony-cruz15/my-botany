@@ -15,6 +15,8 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelStoreOwner;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -68,49 +70,11 @@ public class ButtonListAdapter extends RecyclerView.Adapter<ButtonListAdapter.Vi
                 @Override
                 public void onClick(View view) {
                     Navigation.findNavController(view).navigate(R.id.action_SecondFragment_to_thirdFragment);
+                    PlantViewModel plantViewModel = new ViewModelProvider((ViewModelStoreOwner)mContext).get(PlantViewModel.class);
+                    plantViewModel.setCurrentPlant(selectedPlant);
                 }
             });
         }
     }
 
-    public class SelectedPlantViewModel extends ViewModel {
-
-        // Create a LiveData with a String
-        private MutableLiveData<String> currentName;
-        private MutableLiveData<String> currentInfo;
-        private MutableLiveData<String> currentWaterInfo;
-        private MutableLiveData<Drawable> currentPic;
-
-        public MutableLiveData<String> getCurrentName() {
-            return currentName;
-        }
-
-        public void setCurrentName(MutableLiveData<String> currentName) {
-            this.currentName = currentName;
-        }
-
-        public MutableLiveData<String> getCurrentInfo() {
-            return currentInfo;
-        }
-
-        public void setCurrentInfo(MutableLiveData<String> currentInfo) {
-            this.currentInfo = currentInfo;
-        }
-
-        public MutableLiveData<String> getCurrentWaterInfo() {
-            return currentWaterInfo;
-        }
-
-        public void setCurrentWaterInfo(MutableLiveData<String> currentWaterInfo) {
-            this.currentWaterInfo = currentWaterInfo;
-        }
-
-        public MutableLiveData<Drawable> getCurrentPic() {
-            return currentPic;
-        }
-
-        public void setCurrentPic(MutableLiveData<Drawable> currentPic) {
-            this.currentPic = currentPic;
-        }
-    }
 }

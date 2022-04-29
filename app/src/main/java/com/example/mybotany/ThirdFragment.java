@@ -4,12 +4,17 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 public class ThirdFragment extends Fragment {
+
+    PlantViewModel plantViewModel;
 
     public ThirdFragment() {
     }
@@ -17,12 +22,20 @@ public class ThirdFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        plantViewModel = new ViewModelProvider(this).get(PlantViewModel.class);
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_third, container, false);
+        TextView plantInfoTV = view.findViewById(R.id.plantInfo_textView);
+        plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(), new Observer<Plant>() {
+            @Override
+            public void onChanged(Plant plant) {
+                plantInfoTV.setText(plant.getPlantInfo());
+            }
+        });
         return view;
     }
 }
