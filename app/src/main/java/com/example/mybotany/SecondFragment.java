@@ -60,7 +60,7 @@ public class SecondFragment extends Fragment {
         List<Plant> plants = new ArrayList<>();
         //fills array with content from string files
         for (int i = 0; i < PlantDB.plantName.length; i++) {
-            plants.add(new Plant(PlantDB.plantName[i],"", PlantDB.plantInfo[i],PlantDB.plantWaterInfo[i], PlantDB.plantPic[i] ));
+            plants.add(new Plant(PlantDB.plantName[i],"", PlantDB.plantInfo[i],"", PlantDB.plantPic[i] ));
         }
         return plants;
     }

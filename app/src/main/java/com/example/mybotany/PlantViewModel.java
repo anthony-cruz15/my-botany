@@ -15,6 +15,7 @@ public class PlantViewModel extends AndroidViewModel {
 
     public PlantViewModel(@NonNull Application application) {
         super(application);
+        currentPlant = new MutableLiveData<Plant>();
     }
 
     public MutableLiveData<Plant> getCurrentPlant() {
