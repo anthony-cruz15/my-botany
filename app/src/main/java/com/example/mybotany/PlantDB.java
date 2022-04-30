@@ -180,7 +180,7 @@ public class PlantDB {
             "Water every 2-3 weeks, allowing soil to dry out between waterings. Expect to water more " +
                     "often in brighter light and less often in lower light."
     };
-    public static int[] plantPic ={
+    public static int[] plantPic = {
             R.drawable.giantdoon,
             R.drawable.rose,
             R.drawable.euphorbiasplant,
