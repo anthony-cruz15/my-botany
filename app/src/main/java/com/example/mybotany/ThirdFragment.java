@@ -30,10 +30,12 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_third, container, false);
         TextView plantInfoTV = view.findViewById(R.id.plantInfo_textView);
+        TextView waterInfoTV = view.findViewById(R.id.waterInfo_textView);
         plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(), new Observer<Plant>() {
             @Override
             public void onChanged(Plant plant) {
                 plantInfoTV.setText(plant.getPlantInfo());
+                waterInfoTV.setText(plant.getWaterInfo());
             }
         });
         return view;
