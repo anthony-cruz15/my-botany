@@ -69,9 +69,9 @@ public class ButtonListAdapter extends RecyclerView.Adapter<ButtonListAdapter.Vi
             mPlantButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Navigation.findNavController(view).navigate(R.id.action_SecondFragment_to_thirdFragment);
                     PlantViewModel plantViewModel = new ViewModelProvider((ViewModelStoreOwner)mContext).get(PlantViewModel.class);
                     plantViewModel.setCurrentPlant(selectedPlant);
+                    Navigation.findNavController(view).navigate(R.id.action_SecondFragment_to_thirdFragment);
                 }
             });
         }
