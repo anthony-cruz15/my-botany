@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,7 +23,7 @@ public class ThirdFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        plantViewModel = new ViewModelProvider(this).get(PlantViewModel.class);
+        plantViewModel = new ViewModelProvider(getActivity()).get(PlantViewModel.class);
     }
 
     @Nullable
@@ -31,7 +32,10 @@ public class ThirdFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_third, container, false);
         TextView plantInfoTV = view.findViewById(R.id.plantInfo_textView);
         TextView waterInfoTV = view.findViewById(R.id.waterInfo_textView);
-        plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(), new Observer<Plant>() {
+        Plant plant = plantViewModel.getCurrentPlant().getValue();
+        Toast.makeText(getContext(), plant.getName(), Toast.LENGTH_SHORT).show();
+        plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(),
+                new Observer<Plant>() {
             @Override
             public void onChanged(Plant plant) {
                 plantInfoTV.setText(plant.getPlantInfo());
