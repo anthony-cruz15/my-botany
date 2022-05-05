@@ -33,7 +33,6 @@ public class ThirdFragment extends Fragment {
         TextView plantInfoTV = view.findViewById(R.id.plantInfo_textView);
         TextView waterInfoTV = view.findViewById(R.id.waterInfo_textView);
         Plant plant = plantViewModel.getCurrentPlant().getValue();
-        Toast.makeText(getContext(), plant.getName(), Toast.LENGTH_SHORT).show();
         plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(),
                 new Observer<Plant>() {
             @Override

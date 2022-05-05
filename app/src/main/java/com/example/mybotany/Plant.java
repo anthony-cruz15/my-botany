@@ -23,12 +23,6 @@ public class Plant {
         this.waterInfo = waterInfo;
     }
 
-    Plant(String name, String time, int imageResource) {
-        this.name = name;
-        this.time = time;
-        this.imageResource = imageResource;
-    }
-
     public Plant(String name, String time, String plantInfo, String waterInfo, int imageResource) {
         this.name = name;
         this.time = time;
