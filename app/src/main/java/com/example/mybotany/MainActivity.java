@@ -1,6 +1,8 @@
 package com.example.mybotany;
 
 
+import android.content.Context;
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 
