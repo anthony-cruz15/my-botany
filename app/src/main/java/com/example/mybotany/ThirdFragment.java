@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +34,6 @@ public class ThirdFragment extends Fragment {
         TextView plantInfoTV = view.findViewById(R.id.plantInfo_textView);
         TextView waterInfoTV = view.findViewById(R.id.waterInfo_textView);
         Plant plant = plantViewModel.getCurrentPlant().getValue();
-        Toast.makeText(getContext(), plant.getName(), Toast.LENGTH_SHORT).show();
         plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(),
                 new Observer<Plant>() {
             @Override

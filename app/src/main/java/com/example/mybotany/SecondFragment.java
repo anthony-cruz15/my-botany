@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -51,6 +52,18 @@ public class SecondFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().hide();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        ((AppCompatActivity)getActivity()).getSupportActionBar().show();
+    }
+
+    @Override
     public void onDestroyView() {
         super.onDestroyView();
         binding = null;
@@ -60,7 +73,7 @@ public class SecondFragment extends Fragment {
         List<Plant> plants = new ArrayList<>();
         //fills array with content from string files
         for (int i = 0; i < PlantDB.plantName.length; i++) {
-            plants.add(new Plant(PlantDB.plantName[i],"", PlantDB.plantInfo[i],"", PlantDB.plantPic[i] ));
+            plants.add(new Plant(PlantDB.plantName[i],"", PlantDB.plantInfo[i],PlantDB.plantWaterInfo[i], PlantDB.plantPic[i] ));
         }
         return plants;
     }

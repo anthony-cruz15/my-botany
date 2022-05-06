@@ -15,7 +15,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="SpeakableTextPresentCheck"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/alpina" />
 
     <TextView
         android:id="@+id/plantName"

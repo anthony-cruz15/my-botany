@@ -184,4 +184,24 @@ public class PlantDB {
             R.drawable.englishivy,
             R.drawable.zzplant,
     };
+    public static int[] plantPicBanner = {
+            R.drawable.giantdoonbanner,
+            R.drawable.rosebanner,
+            R.drawable.euphorbiasplantbanner,
+            R.drawable.dutchhyacinthbanner,
+            R.drawable.alpinabanner,
+            R.drawable.irisbanner,
+            R.drawable.mammillariabanner,
+            R.drawable.rubberbanner,
+            R.drawable.livingstones,
+            R.drawable.peperomia,
+            R.drawable.chineseevergreenbanner,
+            R.drawable.grapeivybanner,
+            R.drawable.norfolkpinebanner,
+            R.drawable.dieffenbachiabanner,
+            R.drawable.snakeplantbanner,
+            R.drawable.philodendronbanner,
+            R.drawable.englishivybanner,
+            R.drawable.zzplantbanner
+    };
 }

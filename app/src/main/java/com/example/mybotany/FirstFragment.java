@@ -11,6 +11,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,7 +38,6 @@ import java.util.List;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
-    private RecyclerView mRecyclerView;
     private FloatingActionButton addPlantButton;
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
     private NotificationManager mNotifyManager;
@@ -58,10 +58,7 @@ public class FirstFragment extends Fragment {
         recyclerView.addItemDecoration(decoration);
 
         //initialize recycler view and fab
-        mRecyclerView = binding.plantTimerList;
         addPlantButton = binding.addPlantButton;
-        //sets layout manager for recycler view
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
         createNotificationChannel();
 
