@@ -24,7 +24,6 @@ import java.util.List;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
-    private RecyclerView mRecyclerView;
     private FloatingActionButton addPlantButton;
 
 
@@ -42,10 +41,7 @@ public class FirstFragment extends Fragment {
         recyclerView.addItemDecoration(decoration);
 
         //initialize recycler view and fab
-        mRecyclerView = binding.plantTimerList;
         addPlantButton = binding.addPlantButton;
-        //sets layout manager for recycler view
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
 
         //sets on click listener for the fab
         addPlantButton.setOnClickListener(new View.OnClickListener() {

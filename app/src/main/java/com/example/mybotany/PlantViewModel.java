@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModel;
 
 public class PlantViewModel extends AndroidViewModel {
 
-    // Create a LiveData with a String
+    // Create a LiveData with a Plant
     private MutableLiveData<Plant> currentPlant;
 
     public PlantViewModel(@NonNull Application application) {
