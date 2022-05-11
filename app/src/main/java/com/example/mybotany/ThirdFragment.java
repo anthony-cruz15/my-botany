@@ -33,6 +33,7 @@ public class ThirdFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_third, container, false);
         TextView plantInfoTV = view.findViewById(R.id.plantInfo_textView);
         TextView waterInfoTV = view.findViewById(R.id.waterInfo_textView);
+        ImageView bannerImage = view.findViewById(R.id.plant_imageView);
         Plant plant = plantViewModel.getCurrentPlant().getValue();
         plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(),
                 new Observer<Plant>() {

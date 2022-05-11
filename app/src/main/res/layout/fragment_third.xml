@@ -16,12 +16,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/plantImage"
+            android:id="@+id/plant_imageView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/filler" />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/plantInfo_textView"
