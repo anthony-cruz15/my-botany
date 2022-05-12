@@ -34,13 +34,13 @@ public class ThirdFragment extends Fragment {
         TextView plantInfoTV = view.findViewById(R.id.plantInfo_textView);
         TextView waterInfoTV = view.findViewById(R.id.waterInfo_textView);
         ImageView bannerImage = view.findViewById(R.id.plant_imageView);
-        Plant plant = plantViewModel.getCurrentPlant().getValue();
         plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(),
                 new Observer<Plant>() {
             @Override
             public void onChanged(Plant plant) {
                 plantInfoTV.setText(plant.getPlantInfo());
                 waterInfoTV.setText(plant.getWaterInfo());
+                bannerImage.setImageResource(plant.getBannerImage());
             }
         });
         return view;
