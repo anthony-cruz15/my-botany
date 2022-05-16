@@ -13,10 +13,20 @@ public class PlantViewModel extends AndroidViewModel {
 
     // Create a LiveData with a Plant
     private MutableLiveData<Plant> currentPlant;
+    private MutableLiveData<Plant> newtTimerPlant;
+
+    public MutableLiveData<Plant> getNewtTimerPlant() {
+        return newtTimerPlant;
+    }
+
+    public void setNewtTimerPlant(Plant newtTimerPlant) {
+        this.newtTimerPlant.setValue(newtTimerPlant);
+    }
 
     public PlantViewModel(@NonNull Application application) {
         super(application);
         currentPlant = new MutableLiveData<Plant>();
+        newtTimerPlant = new MutableLiveData<Plant>();
     }
 
     public MutableLiveData<Plant> getCurrentPlant() {
