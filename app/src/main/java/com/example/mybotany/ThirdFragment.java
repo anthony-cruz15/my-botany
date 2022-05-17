@@ -12,7 +12,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.transition.TransitionInflater;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class ThirdFragment extends Fragment {
 
@@ -36,6 +39,7 @@ public class ThirdFragment extends Fragment {
         TextView plantInfoTV = view.findViewById(R.id.plantInfo_textView);
         TextView waterInfoTV = view.findViewById(R.id.waterInfo_textView);
         ImageView bannerImage = view.findViewById(R.id.plant_imageView);
+        FloatingActionButton addTimerButton = view.findViewById(R.id.addTimer_button);
         plantViewModel.getCurrentPlant().observe(getViewLifecycleOwner(),
                 new Observer<Plant>() {
             @Override
@@ -43,6 +47,13 @@ public class ThirdFragment extends Fragment {
                 plantInfoTV.setText(plant.getPlantInfo());
                 waterInfoTV.setText(plant.getWaterInfo());
                 bannerImage.setImageResource(plant.getBannerImage());
+                addTimerButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        plantViewModel.getTimerList().add(plant);
+                        Navigation.findNavController(view).navigate(R.id.action_ThirdFragment_to_FirstFragment);
+                    }
+                });
             }
         });
         return view;
