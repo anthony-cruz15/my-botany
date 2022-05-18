@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -48,19 +49,28 @@ public class TimerListAdapter extends RecyclerView.Adapter<TimerListAdapter.View
         private TextView mNameText;
         private TextView mInfoText;
         private ImageView mPlantImage;
+        private CardView mTimerCardView;
 
         public Viewholder(View itemView) {
             super(itemView);
             mPlantImage = itemView.findViewById(R.id.fillerImage);
             mNameText = itemView.findViewById(R.id.plantName_textView);
             mInfoText = itemView.findViewById(R.id.plantTime_textView);
-
+            mTimerCardView = itemView.findViewById(R.id.timer_cardView);
         }
 
         public void bindTo(Plant selectedPlant) {
             mNameText.setText(selectedPlant.getName());
             mInfoText.setText(selectedPlant.getTime());
             Glide.with(mContext).load(selectedPlant.getImageResource()).into(mPlantImage);
+            mTimerCardView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    mPlantData.remove(selectedPlant);
+                    notifyItemRemoved(getLayoutPosition());
+                    return true;
+                }
+            });
         }
         
     }
