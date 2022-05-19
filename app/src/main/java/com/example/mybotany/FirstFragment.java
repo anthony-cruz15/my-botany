@@ -11,7 +11,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +19,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -42,18 +42,19 @@ public class FirstFragment extends Fragment {
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
     private NotificationManager mNotifyManager;
     private static final int NOTIFICATION_ID = 0;
-
+    PlantViewModel plantViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentFirstBinding.inflate(inflater, container, false);
         // Inflate the layout for this fragment
+        plantViewModel = new ViewModelProvider(getActivity()).get(PlantViewModel.class);
 
         Context context = getContext();
         RecyclerView recyclerView = binding.plantTimerList;
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
-        recyclerView.setAdapter(new TimerListAdapter(getPlantsFromDB(), context));
+        recyclerView.setAdapter(new TimerListAdapter(getPlantsFromLD(), context));
         RecyclerView.ItemDecoration decoration = new DividerItemDecoration(context, LinearLayout.VERTICAL);
         recyclerView.addItemDecoration(decoration);
 
@@ -84,13 +85,8 @@ public class FirstFragment extends Fragment {
         binding = null;
     }
 
-    private List<Plant> getPlantsFromDB() {
-        List<Plant> plants = new ArrayList<>();
-        //fills array with content from string files
-        for (int i = 0; i < PlantDB.plantName.length; i++) {
-            plants.add(new Plant(PlantDB.plantName[i],"", PlantDB.plantInfo[i], PlantDB.plantWaterInfo[i], PlantDB.plantPic[i], PlantDB.plantPicBanner[i] ));
-        }
-        return plants;
+    private List<Plant> getPlantsFromLD() {
+        return plantViewModel.getTimerList();
     }
 
     public void sendNotification() {
