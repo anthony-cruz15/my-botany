@@ -1,5 +1,6 @@
 package com.example.mybotany;
 
+import static android.content.Context.ALARM_SERVICE;
 import static android.content.Context.NOTIFICATION_SERVICE;
 
 import android.app.AlarmManager;
@@ -18,8 +19,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.NotificationCompat;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
@@ -34,18 +35,12 @@ public class ThirdFragment extends Fragment {
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
     private NotificationManager mNotifyManager;
     private static final int NOTIFICATION_ID = 0;
+    AlarmManager alarmManager;
 
     public ThirdFragment() {
     }
 
-    Intent notifyIntent = new Intent(this, TimerReceiver.class);
 
-    final PendingIntent notifyPendingIntent = PendingIntent.getBroadcast
-            (this, NOTIFICATION_ID, notifyIntent,
-                    PendingIntent.FLAG_UPDATE_CURRENT);
-
-    final AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService
-            (ALARM_SERVICE);
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,14 +49,18 @@ public class ThirdFragment extends Fragment {
         TransitionInflater inflater = TransitionInflater.from(requireContext());
         setEnterTransition(inflater.inflateTransition(R.transition.slide));
 
+
+
+
+        alarmManager = (AlarmManager) getActivity().getSystemService
+                (ALARM_SERVICE);
+
         mNotifyManager = (NotificationManager)
                 getActivity().getSystemService(NOTIFICATION_SERVICE);
 
-        FloatingActionButton addTimerButton = getView().findViewById(R.id.addTimer_button);
 
-
-        boolean alarm = (PendingIntent.getBroadcast(this, NOTIFICATION_ID,
-                notifyIntent, PendingIntent.FLAG_NO_CREATE) != null);
+       /* boolean alarm = (PendingIntent.getBroadcast(getContext(), NOTIFICATION_ID,
+              notifyIntent, PendingIntent.FLAG_NO_CREATE) != null);*/
 
 
         createNotificationChannel();
@@ -99,9 +98,10 @@ public class ThirdFragment extends Fragment {
                             @Override
                             public void onClick(View view) {
                                 plantViewModel.getTimerList().add(plant);
+                                sendNotification();
                                 Navigation.findNavController(view).navigate(R.id.action_ThirdFragment_to_FirstFragment);
 
-                               sendNotification();
+
                             }
                         });
                     }
@@ -112,6 +112,10 @@ public class ThirdFragment extends Fragment {
     public void sendNotification() {
         NotificationCompat.Builder notifyBuilder = getNotificationBuilder();
         mNotifyManager.notify(NOTIFICATION_ID, notifyBuilder.build());
+        Intent notifyIntent = new Intent(getContext(), TimerReceiver.class);
+        final PendingIntent notifyPendingIntent = PendingIntent.getBroadcast
+                (getContext(), NOTIFICATION_ID, notifyIntent,
+                        PendingIntent.FLAG_UPDATE_CURRENT);
         long repeatInterval = AlarmManager.INTERVAL_FIFTEEN_MINUTES;
 
         long triggerTime = SystemClock.elapsedRealtime()
